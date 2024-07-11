@@ -1,3 +1,349 @@
-.b{
-    font-size: 12rem;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* onboarding-section */
+.onboarding-section {
+    height: 100vh;
+    width: 100%;
+    background-image: url("./images/onboarding1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.onboarding-content-box {
+    position: absolute;
+    top: 45%;
+    width: 38%;
+    padding: 2.8rem 3rem;
+    background-color: #FE8C00;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 48px;
+}
+
+.onboard-indicators div {
+    font-size: 2rem;
+    color: #adacac;
+}
+
+.onboard-indicators div:nth-of-type(1) {
+    color: #fff;
+}
+
+.onboard-inner-box-two div a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.onboard-inner-box-two div a svg {
+    font-size: 1.8rem;
+}
+
+/* onboarding second page  */
+.indicator-two div:nth-of-type(2) {
+    color: #fff;
+}
+
+.second-onboarding-page {
+    background-image: url("./images/onboarding6.jpg");
+}
+
+/* onboarding third page  */
+
+.indicator-three div:nth-of-type(3) {
+    color: #fff;
+}
+
+.third-onboard-next-btn a svg {
+    font-size: 4rem;
+    color: #fff;
+}
+
+/* LOGIN IN SECTION  */
+.Login-signup-section {
+    height: 100vh;
+}
+
+.login-signup-form {
+    padding: 1.3rem;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    width: 315px;
+}
+
+.form-heading p {
+    font-size: 0.9rem;
+    color: #878787;
+}
+
+.login-signup-input-box div input {
+    padding: 0.5rem 1rem;
+}
+
+.login-signup-input-box div input::placeholder {
+    color: #878787;
+}
+
+.forget-pass-box a {
+    text-decoration: none;
+    color: #FE8C00;
+    font-size: 0.9rem;
+}
+
+.forget-pass-box a:hover {
+    text-decoration: underline;
+}
+
+.login-signup-btn button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: #FE8C00;
+    color: #fff;
+    width: 100%;
+}
+
+.or-sign-in-with {
+    color: #878787;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.google-icon {
+    height: 38px;
+    width: 38px;
+    border: 1px solid #D6D6D6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.google-icon img {
+    width: 55%;
+    height: 55%;
+}
+
+.register-link {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    text-decoration: none;
+    color: #FE8C00;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.eye-btn {
+    position: relative;
+    top: -2.43rem;
+    left: 14.6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.login-signup-input-box div input[type=password]::-ms-reveal {
+    display: none;
+}
+
+.terms-policy-link input:checked {
+    background-color: #FE8C00;
+    border: none;
+}
+
+.terms-policy-link label {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.terms-policy-link label a {
+    color: #FE8C00;
+    text-decoration: none;
+}
+
+.terms-policy-link label a:hover {
+    text-decoration: underline;
+}
+
+/* POST SIGN UP PAGE SECTION  */
+.post-signup-section {
+    height: 100vh;
+    background-image: url("./images/onboarding1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.post-signup-content-box {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 0 3rem 0;
+    flex-direction: column;
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+}
+
+.post-signup-img-box {
+    width: 185px;
+}
+
+.post-signup-img-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.post-signup-btn button {
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 2.8rem;
+    border-radius: 21px;
+    background-color: #FE8C00;
+    color: #fff;
+}
+
+.post-signup-logout a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #878787;
+}
+
+@media(max-width:1024px) {
+
+    /* onboarding-section */
+    .onboarding-content-box {
+        padding: 2rem 3rem;
+    }
+}
+
+@media(max-width:768px) {
+
+    /* onboarding-section */
+    .onboarding-content-box {
+        padding: 2rem 1.8rem;
+    }
+
+    .onboarding-section {
+        background-image: url("./images/onboarding2.jpg");
+    }
+
+    /* third onboarding section  */
+    #third-onboard-content-box {
+        top: 40%;
+    }
+
+    /* POST SIGN UP SECTION  */
+    .post-signup-section {
+        background-image: url("./images/onboarding2.jpg");
+    }
+
+    .post-signup-content-box {
+        padding: 1rem 0 2rem 0;
+    }
+}
+
+@media(max-width:612px) {
+
+    /* onboarding-section */
+    .onboarding-content-box {
+        padding: 1.8rem 1.5rem;
+        width: 58%;
+    }
+}
+
+@media(max-width:425px) {
+
+    /* onboarding-section */
+    .onboarding-section {
+        background-image: url("./images/onboarding3.png");
+    }
+
+    .onboard-inner-box-one p {
+        font-size: 0.8rem;
+    }
+
+    .onboard-inner-box-two div a {
+        font-size: 0.8rem;
+    }
+
+    .onboard-inner-box-two div a svg {
+        font-size: 1.5rem;
+    }
+
+    .onboarding-content-box {
+        width: 65%;
+    }
+
+    .second-onboarding-page {
+        background-image: url("./images/onboarding4.png");
+    }
+
+    /* LOGIN SECTION  */
+    .login-signup-form {
+        background-color: #fff;
+    }
+
+    .form-heading p {
+        font-size: 0.8rem;
+    }
+
+    .login-signup-input-box div input::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .login-signup-input-box div label {
+        font-size: 0.8rem;
+    }
+
+    .login-signup-btn button {
+        font-size: 0.8rem;
+        padding: 0.65rem 0;
+    }
+
+    .forget-pass-box a {
+        font-size: 0.8rem;
+    }
+
+    .or-sign-in-with {
+        font-size: 0.8rem;
+    }
+
+    .register-link {
+        font-size: 0.8rem;
+    }
+
+    /* POST SIGN UP PAGE  */
+    .post-signup-img-box {
+        width: 170px;
+    }
+
+    .post-signup-section {
+        background-image: url("./images/post-signup-small.png");
+    }
+
+    .post-signup-logout a {
+        font-size: 0.8rem;
+    }
+
+    .post-signup-btn button {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media(max-width:375px) {
+
+    /* onboarding-section */
+    .onboarding-content-box {
+        padding: 2.5rem 1.5rem;
+        width: 78%;
+    }
 }
