@@ -1,13 +1,51 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./Firebase";
+
 
 function Login() {
     const [isvisible, setIsvisible] = useState(false)
+    const [loginData, setLoginData] = useState({
+        email: "",
+        password: ""
+    })
+    const navigate = useNavigate()
+    const [errorMsg, setErrorMsg] = useState(false)
+
+    const handleChange = (evt) => {
+        const newName = evt.target.name
+        const newVal = evt.target.value
+        setLoginData((pre) => {
+            return { ...pre, [newName]: newVal }
+        })
+    }
+
+    const handleClick = async (evt) => {
+        evt.preventDefault()
+        try {
+            await signInWithEmailAndPassword(auth, loginData.email, loginData.password)
+            console.log("user logged in successfully");
+            navigate("/trackingpage")
+        } catch (error) {
+            console.log(error.message);
+            setErrorMsg(true)
+            setTimeout(() => {
+                setErrorMsg(false)
+            }, 3000);
+        }
+
+        setLoginData({
+            email: "",
+            password: ""
+        })
+    }
 
     return (
         <div className="Login-signup-section d-flex justify-content-center align-items-center">
-            <div className="login-signup-form">
+            {errorMsg ? (<p className="signup-error-msg mb-2 fw-bold">Wrong Email & Password</p>) : ""}
+            <form className="login-signup-form" onSubmit={handleClick}>
                 <div className="form-heading">
                     <h4 className="fw-bold">Login to your account.</h4>
                     <p>Please sign in to your account</p>
@@ -15,11 +53,11 @@ function Login() {
                 <div className="login-signup-input-box">
                     <div className="mb-2">
                         <label htmlFor="email" className="form-label fw-bold mb-1">Email Address</label>
-                        <input type="email" className="form-control" id="email" placeholder="Enter Email" />
+                        <input type="email" className="form-control" id="email" placeholder="Enter Email" name="email" onChange={handleChange} value={loginData.email} required />
                     </div>
                     <div className="mb-0">
                         <label htmlFor="password" className="form-label fw-bold mb-1">Password</label>
-                        <input type={isvisible ? "text" : "password"} className="form-control" id="password" placeholder="Password" />
+                        <input type={isvisible ? "text" : "password"} className="form-control" id="password" placeholder="Password" name="password" onChange={handleChange} value={loginData.password} required />
                         <span className="eye-btn" onClick={() => setIsvisible(!isvisible)}> {isvisible ? <FaEye /> : <FaEyeSlash />}</span>
                     </div>
                 </div>
@@ -37,7 +75,7 @@ function Login() {
                     </div>
                 </div>
                 <p className="register-link text-center">Don't have an account? <Link to="/signup">Register</Link></p>
-            </div>
+            </form>
         </div>
     )
 }

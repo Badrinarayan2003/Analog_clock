@@ -65,6 +65,7 @@
 /* LOGIN IN SECTION  */
 .Login-signup-section {
     height: 100vh;
+    flex-direction: column;
 }
 
 .login-signup-form {
@@ -173,6 +174,14 @@
     text-decoration: underline;
 }
 
+.signup-error-msg {
+    font-size: 0.8rem;
+    color: rgb(222, 70, 70);
+    background-color: #dfdfdf;
+    padding: 4px 22px;
+    border-radius: 7px;
+}
+
 /* POST SIGN UP PAGE SECTION  */
 .post-signup-section {
     height: 100vh;
@@ -210,10 +219,10 @@
     color: #fff;
 }
 
-.post-signup-logout a {
+.post-signup-logout span {
     font-size: 0.9rem;
-    text-decoration: none;
     color: #878787;
+    cursor: pointer;
 }
 
 @media(max-width:1024px) {
