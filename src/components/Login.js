@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./Firebase";
 
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Login() {
     const [isvisible, setIsvisible] = useState(false)
@@ -27,7 +28,7 @@ function Login() {
         try {
             await signInWithEmailAndPassword(auth, loginData.email, loginData.password)
             console.log("user logged in successfully");
-            navigate("/trackingpage")
+            navigate("/profile")
         } catch (error) {
             console.log(error.message);
             setErrorMsg(true)
@@ -70,9 +71,7 @@ function Login() {
                 <p className="or-sign-in-with text-center">----------Or sign in with----------</p>
 
                 <div className="d-flex justify-content-center align-items-center mb-4">
-                    <div className="google-icon d-flex justify-content-center align-items-center">
-                        <img src="./images/google-icon.png" alt="google-icon" />
-                    </div>
+                    <SignInWithGoogle />
                 </div>
                 <p className="register-link text-center">Don't have an account? <Link to="/signup">Register</Link></p>
             </form>

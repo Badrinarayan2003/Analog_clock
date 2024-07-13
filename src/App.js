@@ -8,9 +8,11 @@ import Onboarding3 from './components/Onboarding3';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import PostSignup from './components/PostSignup';
-import TrackingPage from './components/TrackingPage';
+import Profile from './components/Profile';
+import Loading from './components/Loading';
 
 import { auth } from './components/Firebase';
+
 
 
 function App() {
@@ -26,13 +28,14 @@ function App() {
     <Router>
 
       <Routes>
-        <Route exact path='/' element={user ? <Navigate to="/trackingpage" /> : <Onboarding1 />} />
+        <Route exact path='/' element={user ? <Navigate to="/profile" /> : <Onboarding1 />} />
         <Route exact path='/onboarding2' element={<Onboarding2 />} />
         <Route exact path='/onboarding3' element={<Onboarding3 />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/postsignup' element={<PostSignup />} />
-        <Route exact path='/trackingpage' element={<TrackingPage />} />
+        <Route exact path='/profile' element={<Profile />} />
+        <Route exact path='/loading' element={<Loading />} />
       </Routes>
     </Router>
   );

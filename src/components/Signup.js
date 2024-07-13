@@ -5,6 +5,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "./Firebase";
 import { setDoc, doc } from "firebase/firestore";
 
+import SignInWithGoogle from "./SignInWithGoogle";
+
 function Signup() {
     const navigate = useNavigate()
     const [isvisible, setIsvisible] = useState(false)
@@ -34,10 +36,11 @@ function Signup() {
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
                     userName: signupData.username,
+                    profile_image: ""
                 })
+                console.log("register successfully!");
+                navigate("/postsignup")
             }
-            console.log("register successfully!");
-            navigate("/postsignup")
 
         } catch (error) {
             console.log(error.message);
@@ -90,9 +93,7 @@ function Signup() {
                 <p className="or-sign-in-with text-center mb-2">----------Or sign in with----------</p>
 
                 <div className="d-flex justify-content-center align-items-center mb-2">
-                    <div className="google-icon d-flex justify-content-center align-items-center">
-                        <img src="./images/google-icon.png" alt="google-icon" />
-                    </div>
+                    <SignInWithGoogle />
                 </div>
                 <p className="register-link text-center mb-0">Have an account? <Link to="/login">Sign in</Link></p>
             </form>
