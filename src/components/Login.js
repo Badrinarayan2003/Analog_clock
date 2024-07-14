@@ -45,7 +45,7 @@ function Login() {
 
     return (
         <div className="Login-signup-section d-flex justify-content-center align-items-center">
-            {errorMsg ? (<p className="signup-error-msg mb-2 fw-bold">Wrong Email & Password</p>) : ""}
+            {errorMsg ? (<p className="signup-error-msg mb-2 fw-bold">Wrong Email or Password</p>) : ""}
             <form className="login-signup-form" onSubmit={handleClick}>
                 <div className="form-heading">
                     <h4 className="fw-bold">Login to your account.</h4>

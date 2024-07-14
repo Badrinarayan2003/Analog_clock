@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "./Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import Loading from "./Loading";
+import Navbar from "./Navbar";
 
 function Profile() {
     const [userDetails, setUserDetails] = useState(null);
@@ -37,14 +38,16 @@ function Profile() {
         <>
             {
                 userDetails ? (
-                    <div className="tracking-page-section text-center" >
+                    <div className="tracking-page-section text-center overflow-hidden" >
+                        <Navbar userDetails={userDetails} />
                         TRACKING PAGE
                         <p> Username: {userDetails.userName}</p >
                         <p>Email:{userDetails.email}</p>
                         <p>image:{userDetails.profile_image}</p>
                         <div style={{ width: '50px', height: '50px' }}>
-                            <img src={userDetails.profile_image} alt="prfile_img"/>
+                            <img src={userDetails.profile_image} alt="prfile_img" />
                         </div>
+                        
                     </div >
                 ) : (
                     <Loading />
